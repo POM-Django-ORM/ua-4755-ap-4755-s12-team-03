@@ -123,9 +123,14 @@ class Book(models.Model):
         if (name and len(name) > 128):
             return None
         
-        self.name = name if name is not None else self.name
-        self.description = description if description is not None else self.description
-        self.count = count if count is not None else self.count
+        if name is not None:
+            self.name = name
+        if description is not None:
+            self.description = description
+        if count is not None:
+            self.count = count
+            
+        self.save()
 
     def add_authors(self, authors):
         """
