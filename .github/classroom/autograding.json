@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Run tests",
+      "setup": "pip install -r requirements.txt",
+      "run": "python library/manage.py test library",
+      "comparison": "included",
+      "timeout": 60,
+      "points": 10
+    }
+  ]
+}
